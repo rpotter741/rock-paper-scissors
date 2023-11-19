@@ -8,14 +8,21 @@
 </head>
 <body>
     <script>
-        let answer = prompt("Rock, Paper, or Scissors?");
+
 let wins = 0;
 let losses = 0;
 let ties = 0;
-let opponentInput = Math.floor(Math.random() * 3) + 1;
+let games = 0;
 userInput = 0;
 
-switch(answer) {
+
+
+function play() {
+    for (i = 0; (wins <5 && losses <5); i++) {
+        let answer = prompt("Rock, Paper, or Scissors?");
+        games++;
+
+        switch(answer) {
     case "Rock":
         userInput = 1;
         break;
@@ -30,8 +37,9 @@ switch(answer) {
         break;
 }
 
-function play() {
-    if ( userInput === opponentInput ) {
+    let opponentInput = Math.floor(Math.random() * 3) + 1;
+
+        if ( userInput === opponentInput ) {
         alert("You both chose " + answer + "! It's a tie!");
         ties++;
         alert("Ties: " + ties);
@@ -60,7 +68,7 @@ function play() {
         wins++;
         alert("Wins: " + wins);
     }
-
+    }
 }
 
 play()
