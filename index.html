@@ -4,77 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer> </script>
 </head>
 <body>
-    <script>
-
-let wins = 0;
-let losses = 0;
-let ties = 0;
-let games = 0;
-userInput = 0;
-
-
-
-function play() {
-    for (i = 0; (wins <5 && losses <5); i++) {
-        let answer = prompt("Rock, Paper, or Scissors?");
-        games++;
-
-        switch(answer) {
-    case "Rock":
-        userInput = 1;
-        break;
-    case "Paper":
-        userInput = 2;
-        break;
-    case "Scissors":
-        userInput = 3;
-        break;
-    default:
-        userInput = 0;
-        break;
-}
-
-    let opponentInput = Math.floor(Math.random() * 3) + 1;
-
-        if ( userInput === opponentInput ) {
-        alert("You both chose " + answer + "! It's a tie!");
-        ties++;
-        alert("Ties: " + ties);
-    } else if (userInput === 1 && opponentInput === 2) {
-        alert("You chose Rock, and the computer chose Paper! You lose!");
-        losses++;
-        alert("Losses: " + losses);
-    } else if (userInput === 1 && opponentInput === 3) {
-        alert("You chose Rock and the computer chose Scissors! You win!");
-        wins++;
-        alert("Wins: " + wins);
-    } else if (userInput === 2 && opponentInput === 1) {
-        alert("You chose Paper and the computer chose Rock! You win!");
-        wins++;
-        alert("Wins: " + wins);
-    } else if (userInput === 2 && opponentInput === 3) {
-        alert("You chose Paper and the computer chose Scissors! You lose!");
-        losses++;
-        alert("Losses: " + losses);
-    } else if (userInput === 3 && opponentInput === 1) {
-        alert("You chose Scissors and the computer chose Rock! you lose!");
-        losses++;
-        alert("Losses: " + losses);
-    } else if (userInput === 3 && opponentInput === 2) {
-        alert("You chose Scissors and the computer chose Paper! You win!");
-        wins++;
-        alert("Wins: " + wins);
-    }
-    }
-}
-
-play()
-
-
-    </script>
+    <div class="header">
+        <h1 class="title"> Rock, Paper, Scissors!</h1>
+        <h3 class="subtitle"> First to 5 wins!</h3>
+    </div>
+    <div class="columns">
+        <div class="completeWins">
+            <div id="cWTitle">Total Games Won:</div>
+            <div id="cWTracker"> 0 </div>
+        </div>
+        <div class="scores">
+            <div class="left">
+                <button id="rock">Rock</button>
+                <p class="wins"> Round Wins </p>
+                <p id="winTally"> 0 </p>
+            </div>
+            <div class="middle">
+                <button id="paper">Paper</button>
+                <p class="ties"> Round Ties </p>
+                <p id="tieTally"> 0 </p>
+            </div>
+            <div class="right">
+                <button id="scissors">Scissors</button>
+                <p class="losses"> Round Losses </p>
+                <p id="lossTally"> 0 </p>
+            </div>
+        </div>
+        <div class="completeLosses">
+            <div id="cLTitle"> Total Games Lost: </div>
+            <div id="cLTracker"> 0 </div>
+        </div>
+        </div>
+        
+    <div id="result"></div>
 </body>
 </html>
 

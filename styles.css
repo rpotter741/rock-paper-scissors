@@ -1,0 +1,76 @@
+body {
+    background-color: slategray;
+    color: black;
+    font-size: 50px;
+}
+
+button {
+    padding: 22px;
+    color: black;
+    background-color: powderblue;
+    font-weight: bold;
+    width: 125px;
+}
+
+.header {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 30px;
+    margin-top:-60px;
+}
+
+#result {
+    text-align: center;
+    font-size: 24px;
+}
+
+.choices {
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 110px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 38px;
+    padding: 0 240px;
+}
+
+.left, .middle, .right { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0px;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.completeWins { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 6px skyblue;
+}
+
+.completeLosses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 6px skyblue;
+    }
+
+    #cWTracker, #cLTracker { 
+        margin-top: 160px;
+        font-size: 38px;
+    }
