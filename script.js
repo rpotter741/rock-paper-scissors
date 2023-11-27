@@ -6,6 +6,21 @@ let games = 0;
 let userInput = 0;
 let gameWins = 0;
 let gameLosses = 0;
+const array = [];
+
+function trackPlays() {
+    const list = document.querySelector("ul")
+    const result = document.querySelector("#result");
+    const resultText = result.textContent; 
+    const lastPlay = document.createElement("li")
+    const lastPlayText = document.createElement("span");
+    lastPlay.appendChild(lastPlayText);
+        array.push(resultText)
+        lastPlayText.textContent = array.slice(-1);
+        list.prepend(lastPlay);
+
+    }
+
 
 function victory() {
     let test = document.querySelector("#winTally");
@@ -36,6 +51,9 @@ function gameWonContinue() {
     let currentWinsInt = parseInt(currentWinsText);
     let newWinsScore = currentWinsInt + 1;
     currentWins.textContent = newWinsScore;
+    const empty = document.getElementById("previousPlays");
+    empty.innerHTML = ""; 
+
 }
 
 function gameLostContinue() {
@@ -48,6 +66,8 @@ function gameLostContinue() {
     let currentWinsInt = parseInt(currentWinsText);
     let newWinsScore = currentWinsInt + 1;
     currentWins.textContent = newWinsScore;
+    const empty = document.getElementById("previousPlays");
+    empty.innerHTML = ""; 
 }
 
 function defeat() {
@@ -123,7 +143,7 @@ function play(userInput) {
         result.textContent = "You chose Scissors and the computer chose Paper! You win!";
         victory();
     }
-    console.log(opponentInput);
+    trackPlays();
     } 
 
 const rock = document.querySelector("#rock");

@@ -24,6 +24,7 @@ button {
 #result {
     text-align: center;
     font-size: 24px;
+    display: none;
 }
 
 .choices {
@@ -39,7 +40,7 @@ button {
     align-items: center;
     gap: 50px;
     font-size: 38px;
-    padding: 0 240px;
+    padding-left: 0px;
 }
 
 .left, .middle, .right { 
@@ -52,8 +53,14 @@ button {
 
 .columns {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
+}
+
+.rightSort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .completeWins { 
@@ -61,6 +68,7 @@ button {
     flex-direction: column;
     align-items: center;
     border: solid 6px skyblue;
+    width: 375px;
 }
 
 .completeLosses {
@@ -73,4 +81,26 @@ button {
     #cWTracker, #cLTracker { 
         margin-top: 160px;
         font-size: 38px;
+    }
+
+    .placeHolder {
+        display: flex;
+        flex-direction: column;
+        border: 6px skyblue solid;
+        text-align: center;
+    }
+
+    #previousPlays { 
+        font-size: 28px;
+        height: 425px;
+        overflow-y: auto;
+        width: 375px;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    ul {
+        list-style: none;
     }
